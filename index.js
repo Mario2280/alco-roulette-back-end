@@ -16,7 +16,7 @@ app.use(varMiddleware)
 
 app.post('/login', async (req, res) => {
     req.session.isAuthenticated = true;
-
+    console.log(req.body);
 })
 
 app.get('/logout', async (req, res) => {
@@ -26,6 +26,9 @@ app.get('/logout', async (req, res) => {
     res.session.isAuthenticated = false;
 })
 
+app.get('/lexa', async (req, res) => {
+    res.redirect('/');
+})
 
 
 async function start() {
