@@ -7,33 +7,33 @@ const session = require('express-session');
 const varMiddleware = require('./middleware/variables')
 const PORT =  3000;
 
-app.use(session({
-    secret: 'some secret',
-    resave: false,
-    saveUninitialized: false,
-}))
-app.use(varMiddleware)
+// app.use(session({
+//     secret: 'some secret',
+//     resave: false,
+//     saveUninitialized: false,
+// }))
+// app.use(varMiddleware)
 
 
 
-router.post('/login', async (req, res) => {
-    req.session.isAuthenticated = true;
-    console.log(req.body);
-})
+// router.post('/login', async (req, res) => {
+//     req.session.isAuthenticated = true;
+//     console.log(req.body);
+// })
 
-router.get('/logout', async (req, res) => {
-    res.session.destroy(()=>{
-        console.log('Session destroyed');
-    }); 
-    res.session.isAuthenticated = false;
-})
+// router.get('/logout', async (req, res) => {
+//     res.session.destroy(()=>{
+//         console.log('Session destroyed');
+//     }); 
+//     res.session.isAuthenticated = false;
+// })
 
-router.get('/lexa', async (req, res) => {
-    res.redirect('/');
-})
+// router.get('/lexa', async (req, res) => {
+//     res.redirect('/');
+// })
 
 router.get('/auth/login', async (req, res) => {
-    res.send("Hello world");
+    res.status(999).send("Hello world");
 })
 
 app.use(router)
