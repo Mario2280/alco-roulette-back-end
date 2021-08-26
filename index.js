@@ -31,6 +31,11 @@ router.get('/lexa', async (req, res) => {
     res.redirect('/');
 })
 
+router.get('/', async (req, res) => {
+    res.set('Content-Type', 'text/html')
+    res.send('<p>Fuck u bash</p>')
+})
+
 
 async function start() {
     try {
