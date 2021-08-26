@@ -1,10 +1,10 @@
 const express = require('express');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const app = express();
 const {Router} = require('express');
 const router = Router();
-const session = require('express-session');
-const varMiddleware = require('./middleware/variables')
+//const session = require('express-session');
+//const varMiddleware = require('./middleware/variables')
 const PORT =  3000;
 
 // app.use(session({
@@ -32,8 +32,8 @@ const PORT =  3000;
 //     res.redirect('/');
 // })
 
-router.get('/auth/login', async (req, res) => {
-    res.status(999).send("Hello world");
+router.get('/auth/login', (req, res) => {
+    res.status(200).send("Hello world");
 })
 
 app.use(router)
@@ -44,8 +44,8 @@ async function start() {
         //     useNewUrlParser: true,
         //     useFindAndModify: false
         // })
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`)
+        app.listen(() => {
+            console.log(`Server is running on port ${process.env.PORT}`)
         })
     } catch (e) {
         console.log(e)
