@@ -5,7 +5,7 @@ const {Router} = require('express');
 const router = Router();
 const session = require('express-session');
 const varMiddleware = require('./middleware/variables')
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 app.use(session({
     secret: 'some secret',
@@ -13,6 +13,7 @@ app.use(session({
     saveUninitialized: false,
 }))
 app.use(varMiddleware)
+
 
 
 router.post('/login', async (req, res) => {
@@ -31,11 +32,11 @@ router.get('/lexa', async (req, res) => {
     res.redirect('/');
 })
 
-router.get('/', async (req, res) => {
-    res.set('Content-Type', 'text/html')
-    res.send('<p>Fuck u bash</p>')
+router.get('/auth/login', async (req, res) => {
+    res.send("Hello world");
 })
 
+app.use(router)
 
 async function start() {
     try {
