@@ -13,7 +13,8 @@ app.get('/auth/token', (req, res) => {
     }
 });
 app.post('/auth/login', (req, res) => {
-    if(req.body.login == 'admin' && req.body.password == 'admin'){
+  console.log(req.body);  
+  if(req.body.login == 'admin' && req.body.password == 'admin'){
       res.send(token);
     }  else{
       res.status(724).send();
