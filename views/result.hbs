@@ -1,0 +1,8 @@
+{{#if isAuth}}
+    <h1>Successfully!!!</h1>
+    <form action="/auth/logout" method="GET">
+        <button class="btn btn-primary" type="submit">Выйти</button>
+    </form>
+{{else}}
+    <h1>Не повезло не фортануло</h1>
+{{/if}}

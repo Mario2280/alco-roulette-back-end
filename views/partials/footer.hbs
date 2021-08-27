@@ -1,0 +1,8 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="/app.js"></script>
+
+{{#if @root.isAuth}}
+    <p style="color: rgb(51, 88, 13);">Auth</p>
+{{else}}
+    <p style="color:rgb(252, 4, 4)">Not Auth</p>
+{{/if}}
