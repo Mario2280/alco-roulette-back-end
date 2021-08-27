@@ -4,8 +4,9 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 const token = 'dsjfv2moi42fm4vim433v2';
+var urlencodedParcer = body_parser.urlencoded({extended: false});
 var JSONparser = body_parser.json();
-app.post('/auth/token', (req, res) => {
+app.post('/auth/token', urlencodedParcer, (req, res) => {
     console.log(req.body);
     if(req.body == token){
       res.send(true);
