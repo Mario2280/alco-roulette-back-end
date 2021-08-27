@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const token = 'dsjfv2moi42fm4vim433v2';
 app.use(express.json());
 app.post('/auth/token', (req, res) => {
+    console.log(req.body)
     if(req.body == token){
       res.send(true);
     } else{
